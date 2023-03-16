@@ -11,5 +11,5 @@ The project was created to analyze the sentiment of Twitter users about Java pro
 In addition, the repository contains the .csv file used to train the model, database containing tweets and dashboard created in PowerBI.
 
 # Dashboard based on data provided by data mining
-![TwitterDashboard-1](https://user-images.githubusercontent.com/102367840/225586074-b87eb452-917f-4b9d-b9aa-3b2201a941c7.png)
+![TwitterDashboard-1](https://user-images.githubusercontent.com/102367840/225716194-782b713d-7fec-4d80-a47d-274d625fae5b.png)
 
