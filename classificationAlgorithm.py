@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report, confusion_matrix, roc_curve, roc_auc_score
 
-path_to_database = r"./database/Reddit_Data.csv"
+path_to_database = r"./files/Reddit_Data.csv"
 
 class Model:
 

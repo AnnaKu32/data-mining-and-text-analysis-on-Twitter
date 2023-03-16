@@ -45,7 +45,7 @@ def main():
          i = i + 1
 
 
-    # ---------------   wordmap  --------------- #
+    # ---------------   word cloud  --------------- #
 
     list_w = []
     for sentance in all_tweets:
@@ -62,15 +62,15 @@ def main():
     flat_list = list(filter(None, flat_list))
     top_words = fun.top_words(flat_list)
 
-    wordmap_words = []
+    wordcloud_words = []
     for wordcount in top_words:
-        wordmap_words.append(wordcount[0])
+        wordcloud_words.append(wordcount[0])
 
     x,y,c = zip(*np.random.rand(30,3)*4-2)
     norm=plt.Normalize(-2,2)
     cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", ["#00ACEE","#008BC0","#E66C37"])
 
-    wordcloud = WordCloud(width=800, height=400, max_font_size=100, background_color="white", colormap = cmap).generate(str(wordmap_words))
+    wordcloud = WordCloud(width=800, height=400, max_font_size=100, background_color="white", colormap = cmap).generate(str(wordcloud_words))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis("off")
     plt.show()
