@@ -4,8 +4,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from collections import Counter
 
-SYMBOLS = ' {}()[].,:;+-*/#&$...…|<>=~^!?”“’"'
-
+SYMBOLS = '{}()[]\\.,:;+-_@*/#&$...…|<>=~^!?”“’"'
 
 def join_list(word_lists):
     all_words_list = []
@@ -18,8 +17,7 @@ def join_list(word_lists):
 def preprocessing(text):
     tokenizer = TweetTokenizer()
     lm = WordNetLemmatizer()
-    # ps = PorterStemmer()
-
+    ps = PorterStemmer()
     stop_words = set(stopwords.words('english'))
 
     text = re.sub(r'http\S+', '', text)
@@ -32,9 +30,10 @@ def preprocessing(text):
             if ch not in SYMBOLS:
                 temp += ch
         m.append(temp)
+
+    text = [ps.stem(word) for word in m]
     text = [lm.lemmatize(word) for word in m]
-    # text = [ps.stem(word) for word in m]
-    return text
+    return m
 
 
 def cleaning(text):
@@ -90,39 +89,7 @@ def cleaning(text):
     return text
 
 
-def top_words(data):
-    top = Counter(data).most_common(20)
-    return top
+def top_words(text):
+    text = Counter(text).most_common(50)
+    return text
 
-# def tokenizer(text): #check
-#     tokenizer=TweetTokenizer()
-#     text_tokenizer = tokenizer.tokenize(text.lower())
-#     return text_tokenizer
-
-# def stopWords(text): #check
-#     stop_words = set(stopwords.words('english'))
-#     text_stopwords = [w for w in text if not w.lower() in stop_words]
-#     return text_stopwords
-
-# def filtration(text): #check
-#     m = []
-#     for element in text:
-#         temp = ''
-#         for ch in element:
-#             if ch not in SYMBOLS: 
-#                 temp += ch
-#         m.append(temp)
-#     return m
-
-# def deleteLink(text): #check
-#     return re.sub(r'http\S+', '', text)
-
-# def lemmatizer(text): #check
-#     lm = WordNetLemmatizer()
-#     text = [lm.lemmatize(word) for word in text]
-#     return text
-
-# def stemmer(text):
-#     ps = PorterStemmer()
-#     text = [ps.stem(word) for word in text]
-#     return text
