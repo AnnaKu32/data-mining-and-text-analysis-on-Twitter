@@ -1,15 +1,20 @@
 # Data Mining and Text Analysis on Twitter
 
-This repository includes the following components:
+## Introduction:
+The purpose of this project is to analyze the sentiment of Twitter users towards the Java programming language. The repository provides the necessary .py files to conduct the sentiment analysis. It also includes a .csv file used for model training, a database containing the downloaded tweets, and a PowerBI dashboard for further insights.
 
-1. A file where you can enter your verification keys obtained from https://developer.twitter.com/.
-2. A search script for downloading tweets.
-3. Functions for data preprocessing.
-4. A logistic regression model trained using a database from https://www.kaggle.com/datasets/cosmos98/twitter-and-reddit-sentimental-analysis-dataset.
-5. Word Cloud visualization.
+## This repository consists of the following components:
 
-# Background:
-This project aims to analyze the sentiment of Twitter users towards the Java programming language. The repository provides the necessary .py files for performing the analysis. Additionally, it includes a .csv file used for model training, a database containing tweets, and a PowerBI dashboard.
+- Verification Key File: A file where you can input your verification keys obtained from https://developer.twitter.com/.
+  
+- Tweet Download Script: A script to download tweets using specified search parameters.
+  
+- Data Preprocessing Functions: Functions for preprocessing the downloaded data.
+ 
+- Logistic Regression Model: A trained model using a database sourced from https://www.kaggle.com/datasets/cosmos98/twitter-and-reddit-sentimental-analysis-dataset.
+  
+- Word Cloud Visualization: Visual representation of the analyzed data using word clouds.
+
 
 
 # Dashboard based on data provided by data mining
